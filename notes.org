@@ -1,0 +1,18 @@
+- If light is green, 1 car can cross intersection every second
+    - If green light lasts Ti seconds, only first Ti cars will go thru
+
+* Schedule
+- determines order and duration of green light for incoming streets of intersection
+- repeats itself for duration of simulation
+- schedule is list of pairs: (incoming street, duration)
+- each street appears at most once
+- can ignore some incoming streets
+
+* Cars
+- described by path (sequence of streets)
+- goes through single intersection at least once
+- start at the end of the first street in their path
+- if two cars start at end of same street, first one in input goes first
+- first car at intersection crosses immediately
+    - queued cars after it go one per second
+- does not queue up at the end of the last street of its path; immediately removed
